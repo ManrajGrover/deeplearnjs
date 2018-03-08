@@ -94,6 +94,8 @@ export interface KernelBackend extends TensorStorage, BackendTimer {
 
   where(condition: Tensor, a: Tensor, b: Tensor, dtype: DataType): Tensor;
 
+  bitwiseAnd(a: Tensor, b: Tensor): Tensor;
+
   topKValues<T extends Tensor>(x: T, k: number): Tensor1D;
   topKIndices(x: Tensor, k: number): Tensor1D;
 

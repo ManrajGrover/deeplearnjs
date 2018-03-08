@@ -18,7 +18,8 @@
 export interface HeadingMap {
   'Tensors': 'Creation'|'Classes'|'Transformations'|'Slicing and Joining';
   'Operations': 'Arithmetic'|'Basic math'|'Matrices'|'Convolution'|
-      'Normalization'|'Images'|'Logical'|'RNN'|'Reduction'|'Classification';
+      'Normalization'|'Images'|'Logical'|'RNN'|'Reduction'|'Classification'|
+      'Bitwise';
   'Training': 'Gradients'|'Optimizers'|'Losses'|'Classes';
   'Performance': 'Memory'|'Timing';
   // TODO(nsthorat): Make subheading optional.

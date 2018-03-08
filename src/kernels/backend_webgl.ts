@@ -540,6 +540,14 @@ export class MathBackendWebGL implements KernelBackend {
     return this.compileAndRun(program, [condition, a, b], output);
   }
 
+  bitwiseAnd(a: Tensor, b: Tensor): Tensor {
+    const program =
+        new BinaryOpProgram(binaryop_gpu.BITWISE_AND, a.shape, b.shape);
+    const output = this.makeOutputArray(
+        program.outputShape, types.upcastType(a.dtype, b.dtype));
+    return this.compileAndRun(program, [a, b], output);
+  }
+
   topKValues<T extends Tensor>(x: T, k: number): Tensor1D {
     throw new Error('topKValues GPU not yet implemented!');
   }

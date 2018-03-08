@@ -459,6 +459,17 @@ export class MathBackendCPU implements KernelBackend {
     return result;
   }
 
+  bitwiseAnd(a: Tensor, b: Tensor): Tensor {
+    return this.broadcastedBinaryOp(
+        a, b, types.upcastType(a.dtype, b.dtype), (aVal, bVal) => {
+          if (util.isValNaN(aVal, a.dtype) || util.isValNaN(bVal, b.dtype)) {
+            return util.getNaN(a.dtype);
+          } else {
+            return aVal & bVal;
+          }
+        });
+  }
+
   topKValues<T extends Tensor>(x: T, k: number): Tensor1D {
     return this.topK(x, k).values as Tensor1D;
   }

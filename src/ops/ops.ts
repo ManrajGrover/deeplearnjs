@@ -18,6 +18,7 @@
 import {ArrayOps} from './array_ops';
 import {BatchNormOps} from './batchnorm';
 import {BinaryOps} from './binary_ops';
+import {BitwiseOps} from './bitwise_ops';
 import {CompareOps} from './compare';
 import {ConcatOps} from './concat';
 import {ConvOps} from './conv';
@@ -101,6 +102,8 @@ export const logicalAnd = LogicalOps.logicalAnd;
 export const logicalOr = LogicalOps.logicalOr;
 export const logicalXor = LogicalOps.logicalXor;
 export const where = LogicalOps.where;
+
+export const bitwiseAnd = BitwiseOps.bitwiseAnd;
 
 export const abs = UnaryOps.abs;
 export const acos = UnaryOps.acos;
